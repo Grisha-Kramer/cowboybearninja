@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cowboy Bear Ninja</title>
+</head>
+<body>
+    
+    <img src = "cow.jpg">
+    <script>
+    let playerWins = 0;
+    let playerTies = 0;
+    let playerLosses = 0;
+    const gameArray = ["cowboy", "bear", "ninja"];
+    let playerChoice = "cowboy";
+    let computerChoice = "cowboy";
+    while (true) {
+        playerChoice = prompt("Choose ninja, cowboy, or bear.");
+        computerChoice = Math.floor(Math.random() * 3);
+        alert("The computer chose " + gameArray[computerChoice]);
+        if (playerChoice === gameArray[computerChoice]) {
+            playerTies ++;
+            alert("You have tied " + playerTies + " times.");
+        } else if ((playerChoice === "ninja" && gameArray[computerChoice] === "cowboy") || (playerChoice === "bear" && gameArray[computerChoice] === "ninja") || (playerChoice === "cowboy" && gameArray[computerChoice] === "bear")) {
+            playerWins++;
+            alert("You have won " + playerWins + " times.");
+        } else {
+            playerLosses++;
+            alert("You have lost " + playerLosses + " times.");
+        }
+    }
+    </script>
+
+</body>
+</html>
